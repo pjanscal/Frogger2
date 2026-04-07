@@ -6,7 +6,7 @@ public class Plane : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         // Destroy als hij uit beeld is
         if (Mathf.Abs(transform.position.x) > 50f)
