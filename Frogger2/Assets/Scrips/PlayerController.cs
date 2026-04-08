@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour
     public float laneDistance = 2f;   // afstand tussen lanes (forward)
     public float sideDistance = 2f;   // links/rechts movement
     public float moveSpeed = 10f;
-
+    public float minX = -10f;
+    public float maxX = 10f;
     private Vector3 targetPosition;
 
     void Start()
@@ -35,11 +36,24 @@ public class PlayerController : MonoBehaviour
         {
             targetPosition += Vector3.right * sideDistance;
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            targetPosition += Vector3.back * sideDistance;
+        }
     }
 
     void MovePlayer()
     {
+        targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
         transform.position = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        if (targetPosition.x <= minX || targetPosition.x >= maxX)
+    {
+    // kleine push terug
+    targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
+
+    // feedback
+    Debug.Log("Edge!");
+    }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -50,4 +64,4 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
-}
+} 
