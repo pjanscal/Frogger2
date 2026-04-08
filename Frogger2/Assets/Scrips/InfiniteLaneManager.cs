@@ -12,12 +12,15 @@ public class InfiniteLaneManager : MonoBehaviour
     public int lanesAhead = 10;
     public int lanesBehind = 5;
 
-    private float currentZ = 0f;
+    public float currentZ = 327f;
+    public float laneXPosition = -18f;
 
     private List<GameObject> activeLanes = new List<GameObject>();
 
     void Start()
     {
+        currentZ = player.position.z;
+
         for (int i = 0; i < initialLanes; i++)
         {
             SpawnLane();
@@ -49,12 +52,13 @@ public class InfiniteLaneManager : MonoBehaviour
     {
         GameObject lanePrefab = lanePrefabs[Random.Range(0, lanePrefabs.Length)];
 
-        Vector3 spawnPos = new Vector3(0, 0, currentZ);
+        Vector3 spawnPos = new Vector3(laneXPosition, 0, currentZ);
 
         GameObject lane = Instantiate(lanePrefab, spawnPos, Quaternion.identity);
 
         activeLanes.Add(lane);
 
         currentZ += laneLength;
+        Debug.Log("Spawning lane at Z: " + currentZ);
     }
 }

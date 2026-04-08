@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigPlane Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3255775264765728188, guid: c7507bb990cd36e4ea2ab51aa63f9f06, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -75,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3255775264765728188, guid: c7507bb990cd36e4ea2ab51aa63f9f06, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6839405256235547173}
+    - targetCorrespondingSourceObject: {fileID: 3255775264765728188, guid: c7507bb990cd36e4ea2ab51aa63f9f06, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8558240136900633482}
   m_SourcePrefab: {fileID: 100100000, guid: c7507bb990cd36e4ea2ab51aa63f9f06, type: 3}
 --- !u!1 &2511796316210093591 stripped
 GameObject:
@@ -94,3 +101,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Plane
   speed: 5
+--- !u!64 &8558240136900633482
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511796316210093591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6250432009661969070, guid: 10e09ecfbfbd8fc47b37e444b7a2fd78, type: 3}
