@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JetBlue Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2715777419715836930, guid: 94237cc2b5ca52c44a5654ae52a61474, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 3385494709244798648, guid: 94237cc2b5ca52c44a5654ae52a61474, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -74,15 +78,31 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2715777419715836930, guid: 94237cc2b5ca52c44a5654ae52a61474, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4441435894209477938}
+      addedObject: {fileID: 976849000163173998}
+    - targetCorrespondingSourceObject: {fileID: 2715777419715836930, guid: 94237cc2b5ca52c44a5654ae52a61474, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7483697784605063647}
   m_SourcePrefab: {fileID: 100100000, guid: 94237cc2b5ca52c44a5654ae52a61474, type: 3}
 --- !u!1 &8935065880037509080 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2715777419715836930, guid: 94237cc2b5ca52c44a5654ae52a61474, type: 3}
   m_PrefabInstance: {fileID: 6795890328309677018}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &4441435894209477938
-BoxCollider:
+--- !u!114 &976849000163173998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935065880037509080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463833391f253754d8031505f6608d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Plane
+  speed: 7
+--- !u!64 &-7483697784605063647
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,6 +119,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 11.620292, y: 2.9617279, z: 13.662792}
-  m_Center: {x: 0.00000023841856, y: 0.37727836, z: 2.4395955}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4341593835874957438, guid: e8580f94f73199941834ce3f8e2ce45d, type: 3}

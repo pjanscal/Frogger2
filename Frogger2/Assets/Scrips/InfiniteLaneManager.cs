@@ -4,7 +4,7 @@ using UnityEngine;
 public class InfiniteLaneManager : MonoBehaviour
 {
     public Transform player;
-
+    public float laneYPosition = -4.66f; 
     public GameObject[] lanePrefabs; // 🔥 verschillende lane types
     public int initialLanes = 10;
     public float laneLength = 10f;
@@ -12,14 +12,14 @@ public class InfiniteLaneManager : MonoBehaviour
     public int lanesAhead = 10;
     public int lanesBehind = 5;
 
-    public float currentZ = 327f;
+    public float currentZ =  0;
     public float laneXPosition = -18f;
 
     private List<GameObject> activeLanes = new List<GameObject>();
 
     void Start()
     {
-        currentZ = player.position.z;
+        currentZ = 16.7f;
 
         for (int i = 0; i < initialLanes; i++)
         {
@@ -52,13 +52,13 @@ public class InfiniteLaneManager : MonoBehaviour
     {
         GameObject lanePrefab = lanePrefabs[Random.Range(0, lanePrefabs.Length)];
 
-        Vector3 spawnPos = new Vector3(laneXPosition, 0, currentZ);
+        Vector3 spawnPos = new Vector3(laneXPosition, laneYPosition, currentZ);
 
         GameObject lane = Instantiate(lanePrefab, spawnPos, Quaternion.identity);
 
         activeLanes.Add(lane);
 
         currentZ += laneLength;
-        Debug.Log("Spawning lane at Z: " + currentZ);
+       
     }
 }

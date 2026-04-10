@@ -6,7 +6,7 @@ public class LaneSpawner : MonoBehaviour
     public float speed = 5f;
     public float spawnInterval = 2f;
     public bool moveRight = true;
-
+    public float zOffset = 5f;  
     private float timer;
 
     void Update()
@@ -26,7 +26,7 @@ public class LaneSpawner : MonoBehaviour
 
         float spawnX = moveRight ? -30f : 30f;
 
-        Vector3 spawnPos = new Vector3(spawnX, transform.position.y, transform.position.z);
+        Vector3 spawnPos = new Vector3(spawnX, transform.position.y, transform.position.z + zOffset);
 
         GameObject plane = Instantiate(randomPlane, spawnPos, Quaternion.identity);
 
